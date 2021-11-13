@@ -1,0 +1,4 @@
+{
+  "extends": "./node_modules/@art-ws/tsc/tsconfig.eslint.json",
+  "include": ["**/*.*"]
+}

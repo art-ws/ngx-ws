@@ -1,0 +1,88 @@
+{
+  "name": "ngx-ws",
+  "version": "1.0.0",
+  "description": "Bundle angular.json",
+  "homepage": "https://github.com/art-ws/ngx-workspace",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "clean": "rimraf dist coverage *.tgz *.tsbuildinfo *.log",
+    "lint": "eslint --ext .ts .",
+    "test": "jest",
+    "fmt": "prettier --write .",
+    "madge": "npx madge --circular --extensions ts .",
+    "cti": "npx cti -n -b -v ./src"
+  },
+  "bin": {
+    "ngx-ws": "./bin/index.js"
+  },
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "author": {
+    "email": "art-ws@pm.me",
+    "name": "art-ws Team",
+    "url": "https://art-ws.org"
+  },
+  "bugs": {
+    "url": "https://github.com/art-ws/ngx-workspace/issues",
+    "email": "art-ws@pm.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/art-ws/ngx-workspace.git"
+  },
+  "keywords": [
+    "angular",
+    "tools"
+  ],
+  "dependencies": {
+    "@apidevtools/json-schema-ref-parser": "9.0.9",
+    "fs-extra": "10.0.0",
+    "js-yaml": "4.1.0",
+    "json-schema": "0.3.0",
+    "json5": "2.2.0",
+    "lodash": "4.17.21",
+    "tslib": "2.3.1",
+    "yargs": "17.2.1"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "4.0.4",
+    "@types/json5": "0.0.30",
+    "@types/lodash": "4.14.176",
+    "@art-ws/eslint": "latest",
+    "@art-ws/jest": "latest",
+    "@art-ws/prettier": "latest",
+    "@art-ws/tsc": "latest",
+    "@types/chai": "4.2.22",
+    "@types/jest": "27.0.2",
+    "@types/node": "16.11.6",
+    "@typescript-eslint/eslint-plugin": "4.0.1",
+    "@typescript-eslint/parser": "4.0.0",
+    "chai": "4.3.4",
+    "create-ts-index": "^1.8.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-config-standard-with-typescript": "21.0.1",
+    "eslint-plugin-import": "2.25.2",
+    "eslint-plugin-jest": "25.2.4",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "5.1.1",
+    "eslint-plugin-standard": "4.1.0",
+    "jest": "27.3.1",
+    "jest-standard-reporter": "2.0.0",
+    "madge": "5.0.1",
+    "npm-check-updates": "12.0.0",
+    "prettier": "2.4.1",
+    "rimraf": "3.0.2",
+    "ts-jest": "27.0.7",
+    "typescript": "4.4.4"
+  }
+}
