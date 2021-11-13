@@ -1,8 +1,8 @@
 {
   "name": "ngx-ws",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Bundle angular.json",
-  "homepage": "https://github.com/art-ws/ngx-workspace",
+  "homepage": "https://github.com/art-ws/ngx-ws",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
