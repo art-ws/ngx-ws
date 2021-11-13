@@ -32,12 +32,12 @@
     "url": "https://art-ws.org"
   },
   "bugs": {
-    "url": "https://github.com/art-ws/ngx-workspace/issues",
+    "url": "https://github.com/art-ws/ngx-ws/issues",
     "email": "art-ws@pm.me"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/art-ws/ngx-workspace.git"
+    "url": "https://github.com/art-ws/ngx-ws.git"
   },
   "keywords": [
     "angular",
