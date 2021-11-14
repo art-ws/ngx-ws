@@ -1,7 +1,7 @@
 {
   "name": "ngx-ws",
-  "version": "1.0.2",
-  "description": "Bundle angular.json",
+  "version": "1.0.3",
+  "description": "Tool to generate angular.json from human readable definitions.",
   "homepage": "https://github.com/art-ws/ngx-ws",
   "license": "MIT",
   "main": "dist/index.js",
@@ -24,7 +24,7 @@
     "dist"
   ],
   "engines": {
-    "node": ">=14"
+    "node": ">=12"
   },
   "author": {
     "email": "art-ws@pm.me",
