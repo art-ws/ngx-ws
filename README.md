@@ -1,6 +1,6 @@
 # 🚀 ngx-ws
 
-**Generate [angular.json](https://angular.io/guide/workspace-config) from modular, human-friendly definitions.**
+**Generate [angular.json](https://angular.dev/reference/configs/workspace-config) from modular, human-friendly definitions.**
 
 Easily split a large `angular.json` into modular, project-local files using the power of [JSON References](https://www.npmjs.com/package/@apidevtools/json-schema-ref-parser), with the convenience of [YAML](https://yaml.org/) and [JSON5](https://json5.org/) formats.
 
@@ -57,35 +57,9 @@ Let `ngx-ws` handle the generation of `angular.json` for you!
 
 ---
 
-## 📦 Installation
-
-Install globally with npm:
-
-```sh
-npm install -g ngx-ws
-```
-
-Or use [npx](https://docs.npmjs.com/cli/v7/commands/npx) for one-off runs:
-
-```sh
-npx ngx-ws
-```
-
----
-
-## 🚦 Usage
-
-Run `ngx-ws` in a directory containing your `angular.json` file:
-
-```sh
-rm angular.json && ngx-ws -v
-```
-
-- The tool will generate a new `angular.json` based on your modular workspace and project definitions.
-
 **Example:**  
 See the [ngx-ws-example](https://github.com/art-ws/ngx-ws-example) repository.  
-Pay special attention to [angular-workspace.yaml](https://github.com/art-ws/ngx-ws-example/blob/master/angular-workspace.yaml) and [angular-project.yaml](https://github.com/art-ws/ngx-ws-example/blob/master/my-workspace/projects/app1/angular-project.yaml).
+Pay special attention to [angular-workspace.yaml](https://github.com/art-ws/ngx-ws-example/blob/main/angular-workspace.yaml) and [angular-project.yaml](https://github.com/art-ws/ngx-ws-example/blob/main/projects/app1/angular-project.yaml).
 
 ---
 
@@ -97,5 +71,5 @@ Pay special attention to [angular-workspace.yaml](https://github.com/art-ws/ngx-
 | `--deps`       |       | Update `package.json` with project-specific dependencies           |
 | `--debug`      |       | Enable debug mode (retain temporary files)                         |
 | `--dry-run`    |       | Preview changes without writing files                              |
-| `--verbose`    |`-v`  | Enable verbose output                                               |
-| `--version`    |       |                                                                    |
+| `--verbose`    |`-v`   | Enable verbose output                                              |
+| `--version`    |       | Print version                                                      |

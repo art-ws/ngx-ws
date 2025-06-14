@@ -1,7 +1,7 @@
 {
   "name": "ngx-ws",
-  "version": "1.1.0",
-  "description": "Decompose big angular.json to smaller parts",
+  "version": "1.1.2",
+  "description": "Easily split a large angular.json into modular and smaller project-local files",
   "type": "module",
   "keywords": [
     "angular",
