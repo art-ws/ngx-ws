@@ -23,6 +23,7 @@ const argv = yargs(hideBin(process.argv))
     description: "Dry run",
   })
   .option("build", {
+    alias: "b",
     type: "boolean",
     description: "Build the files from angular.json",
   })

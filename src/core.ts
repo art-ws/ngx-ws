@@ -11,6 +11,7 @@ import {
   loadYamlFromString,
   yamlExt,
 } from "./interpolate.js";
+import { buildFiles } from "./build.js";
 
 const getProjectNames = (projectsDirPath: string) => {
   const result = readdirSync(projectsDirPath).filter((f: string) =>
@@ -334,14 +335,20 @@ export class WorkspaceBundler {
 
   async build() {
     const { cwd } = this.options;
-    console.log(`Building workspace at ${cwd}...`);
+    console.log(`Building workspace at '${cwd}' ...`);
+    const files = await buildFiles({ workingDir: cwd });
+    files.forEach((file) => {
+      const filePath = path.join(cwd, file.localPath);
+      fs.writeFileSync(filePath, file.content);
+      console.log(`Created: ${filePath}`);
+    });
   }
 
   async run() {
     const { cwd } = this.options;
     this.debug(`cwd: ${cwd}`);
     if (this.options.argv.build) {
-      await this.build()
+      await this.build();
     } else {
       const projectsDir = await this.getProjectsDir();
       getProjectNames(`${cwd}/${projectsDir}`).forEach((app) => {

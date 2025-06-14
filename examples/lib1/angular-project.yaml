@@ -1,0 +1,26 @@
+vars:
+  root: "projects/{{name}}"
+  src: "{{root}}/src"
+project:
+  projectType: library
+  root: "{{root}}"
+  sourceRoot: "{{src}}"
+  prefix: lib
+  architect:
+    build:
+      builder: "@angular-devkit/build-angular:ng-packagr"
+      options:
+        project: "{{root}}/ng-package.json"
+      configurations:
+        production:
+          tsConfig: "{{root}}/tsconfig.lib.prod.json"
+        development:
+          tsConfig: "{{root}}/tsconfig.lib.json"
+      defaultConfiguration: production
+    test:
+      builder: "@angular-devkit/build-angular:karma"
+      options:
+        tsConfig: "{{root}}/tsconfig.spec.json"
+        polyfills:
+          - zone.js
+          - zone.js/testing
