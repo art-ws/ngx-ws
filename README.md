@@ -53,5 +53,5 @@ Pay special attention to [angular-workspace.yaml](https://github.com/art-ws/ngx-
 | `--deps`       |       | Update `package.json` with project-specific dependencies           |
 | `--debug`      |       | Enable debug mode (retain temporary files)                         |
 | `--dry-run`    |       | Preview changes without writing files                              |
-| `-v`, `--verbose` |    | Enable verbose output                                              |
+| `--verbose`    |`-v`  | Enable verbose output                                               |
 | `--version`    |       |                                                                    |
