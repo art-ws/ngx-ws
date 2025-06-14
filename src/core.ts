@@ -291,7 +291,12 @@ function ensureDependency({
   );
 }
 class Options {
-  argv: { verbose: boolean; dryRun: boolean; debug: boolean };
+  argv: {
+    verbose: boolean;
+    dryRun: boolean;
+    debug: boolean;
+    build: boolean;
+  };
   cwd: string;
   app: string;
 }
@@ -327,18 +332,27 @@ export class WorkspaceBundler {
     this.debug(`projectsDir: ${this.projectsDir}`);
   }
 
+  async build() {
+    const { cwd } = this.options;
+    console.log(`Building workspace at ${cwd}...`);
+  }
+
   async run() {
     const { cwd } = this.options;
     this.debug(`cwd: ${cwd}`);
-    const projectsDir = await this.getProjectsDir();
-    getProjectNames(`${cwd}/${projectsDir}`).forEach((app) => {
-      processProject({
-        cwd,
-        app,
-        projectsDir,
-        options: this.options,
-        log: this.log.bind(this),
+    if (this.options.argv.build) {
+      await this.build()
+    } else {
+      const projectsDir = await this.getProjectsDir();
+      getProjectNames(`${cwd}/${projectsDir}`).forEach((app) => {
+        processProject({
+          cwd,
+          app,
+          projectsDir,
+          options: this.options,
+          log: this.log.bind(this),
+        });
       });
-    });
+    }
   }
 }

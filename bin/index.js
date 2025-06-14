@@ -22,6 +22,10 @@ const argv = yargs(hideBin(process.argv))
     type: "boolean",
     description: "Dry run",
   })
+  .option("build", {
+    type: "boolean",
+    description: "Build the files from angular.json",
+  })
   .option("debug", {
     type: "boolean",
     description: "Debug mode",

@@ -49,8 +49,9 @@ Pay special attention to [angular-workspace.yaml](https://github.com/art-ws/ngx-
 
 | Option         | Alias | Description                                                        |
 | -------------- | ----- | ------------------------------------------------------------------ |
+| `--build`      |       | Build files from `angular.json`                                    |
 | `--deps`       |       | Update `package.json` with project-specific dependencies           |
 | `--debug`      |       | Enable debug mode (retain temporary files)                         |
 | `--dry-run`    |       | Preview changes without writing files                              |
-| `-v`, `--verbose` |  | Enable verbose output                                               |
-| `--version`   
+| `-v`, `--verbose` |    | Enable verbose output                                              |
+| `--version`    |       |                                                                    |
