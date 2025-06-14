@@ -1,7 +1,8 @@
-.package.json
 *.log
 *.tsbuildinfo
 node_modules
 .rush
 coverage
-pnpm-lock.yaml
+pnpm-lock.*
+.npmrc
+.npmignore

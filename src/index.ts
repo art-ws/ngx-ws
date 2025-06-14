@@ -1,2 +1,2 @@
-export * from "./cli"
-export * from "./core"
+export * from "./cli.js"
+export * from "./core.js"

@@ -1,12 +1,18 @@
 #!/usr/bin/env node
-const path = require("path")
-const package = require(path.join(__dirname, "../package.json"))
-const { main } = require("../dist/index")
 
-const app = Object.keys(package.bin)[0]
+import { join } from "path"
+import { fileURLToPath } from 'url';
+const dir = join(fileURLToPath(import.meta.url), '..');
+import { readFileSync } from "fs";
+const p = JSON.parse(readFileSync(join(dir, "../package.json"), "utf8"));
+import { main } from "../dist/index.js";
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
+
+const app = Object.keys(p.bin)[0]
 
 // https://www.npmjs.com/package/yargs
-const { argv } = require("yargs")
+const argv = yargs(hideBin(process.argv))
   .option("verbose", {
     alias: "v",
     type: "boolean",
@@ -22,7 +28,7 @@ const { argv } = require("yargs")
   })
   .usage(`Usage: ${app}`)
   .epilog("https://art-ws.org, Copyright 2021")
-  .example(app, package.description || "")
+  .example(app, p.description || "").parse();
 
 main({ argv, app }).catch((e) => {
   console.error(e)

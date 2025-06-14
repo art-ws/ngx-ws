@@ -1,8 +1,41 @@
 {
-  "extends": "./node_modules/@art-ws/tsc/tsconfig.json",
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "src"
+    "rootDir": "src",
+    "allowJs": false,
+    "checkJs": false,
+    "alwaysStrict": true,
+    "declaration": true,
+    "declarationMap": true,
+    "incremental": true,
+    "module": "es2020",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitThis": true,
+    "sourceMap": true,
+    "strictBindCallApply": true,
+    "target": "es2020",
+    "lib": [
+      "dom",
+      "ES2020",
+    ],
+    "removeComments": false,
+    "importHelpers": true,
+    "noEmitHelpers": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "strictFunctionTypes": false,
+    "strictPropertyInitialization": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "noImplicitReturns": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
-  "include": ["src/**/*.ts"]
+  "include": [
+    "src/**/*.ts"
+  ],
 }
