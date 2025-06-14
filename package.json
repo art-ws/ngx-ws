@@ -1,8 +1,7 @@
 {
   "name": "ngx-ws",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Easily split a large angular.json into modular and smaller project-local files",
-  "type": "module",
   "keywords": [
     "angular",
     "tools"
@@ -22,6 +21,7 @@
     "email": "art-ws@pm.me",
     "url": "https://art-ws.org"
   },
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
