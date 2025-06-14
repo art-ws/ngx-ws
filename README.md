@@ -53,11 +53,12 @@ Let `ngx-ws` handle the generation of `angular.json` for you!
 - 📝 Supports [YAML](https://yaml.org/) and [JSON5](https://json5.org/) formats
 - 🔗 Handles [JSON References](https://datatracker.ietf.org/doc/html/draft-pbryan-zyp-json-ref-03) for modular configuration
 - 🔄 Recursive variable interpolation for flexible templating
-- 🛠️ Simplifies configuration of [scripts, styles, and assets](https://angular.io/guide/workspace-config#styles-and-scripts-configuration)
+- 🛠️ Simplifies configuration of [scripts, styles, and assets](https://angular.dev/reference/configs/workspace-config#styles-and-scripts-configuration)
 
 ---
 
-**Example:**  
+## 🧩 Example  
+
 See the [ngx-ws-example](https://github.com/art-ws/ngx-ws-example) repository.  
 Pay special attention to [angular-workspace.yaml](https://github.com/art-ws/ngx-ws-example/blob/main/angular-workspace.yaml) and [angular-project.yaml](https://github.com/art-ws/ngx-ws-example/blob/main/projects/app1/angular-project.yaml).
 
