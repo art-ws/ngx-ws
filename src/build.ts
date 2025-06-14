@@ -53,13 +53,16 @@ export async function buildFiles(o: { workingDir: string }): Promise<WsFile[]> {
       project,
     };
     const localPath = path.join(wsVars.projects, name, "angular-project.yaml");
-    let content = yaml.dump(projYaml, { lineWidth: 120 });
 
     // Process variables in the content
-    content = processVars({
+    const jsonContent = processVars({
       varsOrder: ["env", "environments", "styleExt", "root", "src", "name"],
       vars,
-      content,
+      content: JSON.stringify(projYaml, null, 2),
+    });
+
+    const content = yaml.dump(JSON.parse(jsonContent), {
+      lineWidth: 120,
     });
 
     projectFiles.push({

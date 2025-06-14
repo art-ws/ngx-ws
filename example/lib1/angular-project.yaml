@@ -1,0 +1,22 @@
+vars:
+  name: lib1
+  root: projects/{{name}}
+  src: '{{root}}/src'
+project:
+  projectType: library
+  root: '{{root}}'
+  sourceRoot: '{{root}}/src'
+  prefix: lib
+  architect:
+    build:
+      builder: '@angular/build:ng-packagr'
+      configurations:
+        production:
+          tsConfig: '{{root}}/tsconfig.lib.prod.json'
+        development:
+          tsConfig: '{{root}}/tsconfig.lib.json'
+      defaultConfiguration: production
+    test:
+      builder: '@angular/build:karma'
+      options:
+        tsConfig: '{{root}}/tsconfig.spec.json'

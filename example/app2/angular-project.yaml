@@ -1,0 +1,73 @@
+vars:
+  name: app2
+  root: projects/{{name}}
+  src: '{{root}}/src'
+  environments: '{{root}}/src/environments'
+  env: '{{environments}}/environment'
+  styleExt: scss
+project:
+  projectType: application
+  schematics:
+    '@schematics/angular:component':
+      inlineTemplate: true
+      inlineStyle: true
+      style: '{{styleExt}}'
+      skipTests: true
+    '@schematics/angular:class':
+      skipTests: true
+    '@schematics/angular:directive':
+      skipTests: true
+    '@schematics/angular:guard':
+      skipTests: true
+    '@schematics/angular:interceptor':
+      skipTests: true
+    '@schematics/angular:pipe':
+      skipTests: true
+    '@schematics/angular:resolver':
+      skipTests: true
+    '@schematics/angular:service':
+      skipTests: true
+  root: '{{root}}'
+  sourceRoot: '{{root}}/src'
+  prefix: app
+  architect:
+    build:
+      builder: '@angular/build:application'
+      options:
+        browser: '{{root}}/src/main.ts'
+        tsConfig: '{{root}}/tsconfig.app.json'
+        inlineStyleLanguage: '{{styleExt}}'
+        assets:
+          - glob: '**/*'
+            input: '{{root}}/public'
+        styles:
+          - '{{root}}/src/styles.{{styleExt}}'
+        server: '{{root}}/src/main.server.ts'
+        outputMode: server
+        ssr:
+          entry: '{{root}}/src/server.ts'
+      configurations:
+        production:
+          budgets:
+            - type: initial
+              maximumWarning: 500kB
+              maximumError: 1MB
+            - type: anyComponentStyle
+              maximumWarning: 4kB
+              maximumError: 8kB
+          outputHashing: all
+        development:
+          optimization: false
+          extractLicenses: false
+          sourceMap: true
+      defaultConfiguration: production
+    serve:
+      builder: '@angular/build:dev-server'
+      configurations:
+        production:
+          buildTarget: '{{name}}:build:production'
+        development:
+          buildTarget: '{{name}}:build:development'
+      defaultConfiguration: development
+    extract-i18n:
+      builder: '@angular/build:extract-i18n'

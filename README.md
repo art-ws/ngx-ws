@@ -7,7 +7,7 @@ Easily split a large `angular.json` into modular, project-local files using the 
 ---
 ## 🛠️ How It Works
 
-1. **Install `ngx-ws` globally** (using your preferred package manager):
+1. **Install [ngx-ws](https://www.npmjs.com/package/ngx-ws) globally** (using your preferred package manager):
 
   ```sh
   npm install -g ngx-ws
